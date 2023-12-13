@@ -27,7 +27,6 @@ export default function Home() {
   useEffect(() => {
     if (audioAllowed) {
       audio.volume = 0.8
-      audio.preload = "none"
       audio.play()
     }
   }, [audio, displayMode, audioAllowed]);
