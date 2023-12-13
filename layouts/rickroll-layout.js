@@ -1,6 +1,8 @@
 'use client'
 
-const RickrollLayout = ({children}) => {
+import {memo} from "react";
+
+const RickrollLayout = memo(({children}) => {
   return (
       <div className={"flex min-h-screen items-center"}>
         <video muted autoPlay loop playsInline disablePictureInPicture preload="auto" className={"absolute h-full w-full object-cover"}>
@@ -9,6 +11,6 @@ const RickrollLayout = ({children}) => {
         {children}
       </div>
   )
-}
+})
 
 export default RickrollLayout;
