@@ -13,6 +13,8 @@ export default function Home() {
   const searchParams = useSearchParams();
   const [displayMode, setDisplayMode] = useLocalStorage('display-mode', 'rickroll')
   const [audioAllowed, setAudioAllowed] = useState(false);
+  const greetingsAudio = new Audio('/greetings.mp3')
+  const rickrollAudio = new Audio('/rickroll.mp3')
 
   const Layout = displayMode === 'greetings' ? GreetingsLayout : RickrollLayout;
 
@@ -27,16 +29,14 @@ export default function Home() {
     if (audioAllowed) {
       switch (displayMode) {
         case 'greetings': {
-          const audio = new Audio('/greetings.mp3')
-          audio.volume = 0.8
-          audio.play()
+          greetingsAudio.volume = 0.8
+          greetingsAudio.play()
           break
         }
         case 'rickroll':
         default: {
-          const audio = new Audio('/rickroll.mp3')
-          audio.volume = 0.8
-          audio.play()
+          rickrollAudio.volume = 0.8
+          rickrollAudio.play()
         }
       }
     }
