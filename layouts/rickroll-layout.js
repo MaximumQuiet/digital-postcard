@@ -3,7 +3,7 @@
 const RickrollLayout = ({children}) => {
   return (
       <div className={"flex min-h-screen items-center"}>
-        <video muted autoPlay loop playsInline disablePictureInPicture preload="none" className={"absolute h-full w-full object-cover"}>
+        <video muted autoPlay loop playsInline disablePictureInPicture preload="auto" className={"absolute h-full w-full object-cover"}>
           <source src="/rickroll.webm" type="video/webm" />
         </video>
         {children}
