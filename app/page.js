@@ -30,7 +30,7 @@ export default function Home() {
       audio.preload = "none"
       audio.play()
     }
-  }, [displayMode, audioAllowed]);
+  }, [audio, displayMode, audioAllowed]);
 
   return (
       <Layout>
