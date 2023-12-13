@@ -43,10 +43,10 @@ export default function Home() {
   }, [displayMode, audioAllowed]);
 
   return (
-      <AudioRequest onAllowed={() => setAudioAllowed(true)}>
-        <Layout>
+      <Layout>
+        <AudioRequest allowed={audioAllowed} onAllowed={() => setAudioAllowed(true)}>
           <div
-              className="z-10 text-base absolute top-5 left-5 rounded-lg border border-transparent px-1 py-1 transition-colors max-sm:bg-black max-sm:bg-opacity-60 text-center">
+              className="z-10 text-base absolute top-5 left-5 rounded-lg border border-transparent px-1 py-1 max-sm:bg-black max-sm:bg-opacity-60 text-center">
             <div
                 className="font-silkscreen text-lg max-sm:text-base text-amber-50 lg:static lg:h-auto lg:w-auto lg:bg-none">
               <a>
@@ -54,7 +54,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </Layout>
-      </AudioRequest>
+        </AudioRequest>
+      </Layout>
   )
 }
